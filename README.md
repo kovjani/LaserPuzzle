@@ -1,1 +1,1 @@
-# LaserPuzzle
+\LaserPuzzle\bin\Debug\app.publish\LaserPuzzle.exe
