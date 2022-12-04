@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -64,6 +65,8 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.previous = new System.Windows.Forms.Button();
+            this.next = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -125,11 +128,13 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(244, 132);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(50, 50);
@@ -153,6 +158,8 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -308,6 +315,8 @@
             // button18
             // 
             this.button18.BackColor = System.Drawing.Color.Transparent;
+            this.button18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button18.BackgroundImage")));
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button18.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button18.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -562,12 +571,32 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(106, 44);
+            this.label1.Location = new System.Drawing.Point(106, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 32);
             this.label1.TabIndex = 35;
             this.label1.Text = "Level 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // previous
+            // 
+            this.previous.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.previous.Location = new System.Drawing.Point(36, 76);
+            this.previous.Name = "previous";
+            this.previous.Size = new System.Drawing.Size(75, 23);
+            this.previous.TabIndex = 36;
+            this.previous.Text = "Previous";
+            this.previous.UseVisualStyleBackColor = true;
+            // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Location = new System.Drawing.Point(206, 76);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(75, 23);
+            this.next.TabIndex = 37;
+            this.next.Text = "Next";
+            this.next.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -575,6 +604,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(314, 539);
+            this.Controls.Add(this.next);
+            this.Controls.Add(this.previous);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button35);
             this.Controls.Add(this.button34);
@@ -612,7 +643,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.Opacity = 0.97D;
+            this.ShowIcon = false;
             this.Text = "Laser Puzzle";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -658,6 +693,8 @@
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button previous;
+        private System.Windows.Forms.Button next;
     }
 }
 

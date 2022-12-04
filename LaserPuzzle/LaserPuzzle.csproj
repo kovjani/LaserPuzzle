@@ -120,5 +120,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\backslash.png" />
+    <Content Include="Pictures\laser_gun.png" />
+    <Content Include="Pictures\lightbulb_off.png" />
+    <Content Include="Pictures\lightbulb_on.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
