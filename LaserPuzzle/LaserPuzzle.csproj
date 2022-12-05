@@ -74,16 +74,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="HorizontalLaserBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LaserGunBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LightOffBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LightOnBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VerticalLaserBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VerticalBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HorizontalBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Block.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BackslashBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SlashBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EmptyBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Field.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Field.Designer.cs">
+      <DependentUpon>Field.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="IBlock.cs" />
+    <Compile Include="LaserPuzzle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Field.resx">
+      <DependentUpon>Field.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,6 +127,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="LaserPuzzle_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -121,10 +156,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pictures\backslash.png" />
-    <Content Include="Pictures\laser_gun.png" />
-    <Content Include="Pictures\lightbulb_off.png" />
-    <Content Include="Pictures\lightbulb_on.png" />
+    <Content Include="Resources\backslash.png" />
+    <None Include="Resources\vertical_line.png" />
+    <None Include="Resources\horizontal_line.png" />
+    <None Include="Resources\horizontalal_laser.png" />
+    <Content Include="Resources\laser_gun.png" />
+    <Content Include="Resources\lightbulb_off.png" />
+    <Content Include="Resources\lightbulb_on.png" />
+    <Content Include="Resources\slash.png" />
+    <None Include="Resources\vertical_laser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

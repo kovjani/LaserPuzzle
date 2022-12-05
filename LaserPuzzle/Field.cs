@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LaserPuzzle
 {
-    public partial class Form1 : Form
+    public partial class Field : Form
     {
-        public Form1()
+        public Field()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace LaserPuzzle
         }
 
         private void button16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
