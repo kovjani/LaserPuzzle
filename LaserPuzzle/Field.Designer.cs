@@ -33,8 +33,6 @@ namespace LaserPuzzle
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.previous = new System.Windows.Forms.Button();
-            this.next = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -49,34 +47,12 @@ namespace LaserPuzzle
             this.label1.Text = "Level 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // previous
-            // 
-            this.previous.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.previous.Location = new System.Drawing.Point(36, 76);
-            this.previous.Name = "previous";
-            this.previous.Size = new System.Drawing.Size(75, 23);
-            this.previous.TabIndex = 36;
-            this.previous.Text = "Previous";
-            this.previous.UseVisualStyleBackColor = true;
-            // 
-            // next
-            // 
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.next.Location = new System.Drawing.Point(206, 76);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(75, 23);
-            this.next.TabIndex = 37;
-            this.next.Text = "Next";
-            this.next.UseVisualStyleBackColor = true;
-            // 
             // Field
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(314, 539);
-            this.Controls.Add(this.next);
-            this.Controls.Add(this.previous);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -95,8 +71,6 @@ namespace LaserPuzzle
 
         //private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button previous;
-        private System.Windows.Forms.Button next;
     }
 }
 
