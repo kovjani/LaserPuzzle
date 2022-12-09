@@ -7,7 +7,7 @@ namespace LaserPuzzle
     internal static class LaserPuzzle
     {
         public static Block firstClicked = null;
-
+        static Field f = new Field();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -15,9 +15,9 @@ namespace LaserPuzzle
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.SetCompatibleTextRenderingDefault(false);
 
-            Field f = new Field();
+            
 
             //Level 1
             string[,] templateField = {
@@ -30,7 +30,7 @@ namespace LaserPuzzle
                 { "EMP", "EMP", "EMP", "EMP", "EMP" }
             };
 
-            NewField(ref f, templateField);
+            NewField(templateField);
 
             Application.Run(f);
         }
@@ -58,8 +58,25 @@ namespace LaserPuzzle
                 firstClicked.FlatAppearance.BorderColor = Color.Gray;
                 firstClicked = null;
             }
+            else if (clickedType.Equals(typeof(VerticalLaserBlock)))
+            {
+                Block secondClicked = clickedBlock;
+                Point firstLocation = firstClicked.Location;
+
+                firstClicked.Location = secondClicked.Location;
+                secondClicked.Location = firstLocation;
+
+                
+                Block btn = new EmptyBlock();
+                btn.Location = secondClicked.Location;
+                f.Controls.Add(btn);
+                f.Controls.Remove(secondClicked);
+
+                firstClicked.FlatAppearance.BorderColor = Color.Gray;
+                firstClicked = null;
+            }
         }
-        static void NewField(ref Field f, string[,] templateField)
+        static void NewField(string[,] templateField)
         {
             Block btn;
             for (int i = 0; i < templateField.GetLength(0); i++)
