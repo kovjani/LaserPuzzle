@@ -90,19 +90,13 @@
     <Compile Include="VerticalLaserBlock.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VerticalBlock.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="HorizontalBlock.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Block.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="BackslashBlock.cs">
+    <Compile Include="BackslashMirrorBlock.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SlashBlock.cs">
+    <Compile Include="SlashMirrorBlock.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="EmptyBlock.cs">

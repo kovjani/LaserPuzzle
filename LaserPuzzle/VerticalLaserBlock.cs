@@ -16,5 +16,14 @@ namespace LaserPuzzle
             base.BackgroundImage = global::LaserPuzzle.Properties.Resources.vertical_laser;
             base.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
+        public override void Clicked(object sender, EventArgs e)
+        {
+            if (SelectedMirror != null)
+            {
+                ChangeLocation();
+                ChangeLaserDirection();
+                FinishAction();
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -11,7 +12,15 @@ namespace LaserPuzzle
     internal class EmptyBlock : Block
     {
         public EmptyBlock() { 
-            base.BackColor = System.Drawing.Color.Transparent;
+            base.BackColor = Color.Transparent;
+        }
+        public override void Clicked(object sender, EventArgs e)
+        {
+            if (SelectedMirror != null)
+            {
+                ChangeLocation();
+                FinishAction();
+            }
         }
     }
 }

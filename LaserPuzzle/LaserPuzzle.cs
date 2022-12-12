@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
+using System.Media;
 
 namespace LaserPuzzle
 {
     internal static class LaserPuzzle
     {
-        public static Block firstClicked = null;
-        static Field f = new Field();
+        public static Field f = new Field();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,64 +18,23 @@ namespace LaserPuzzle
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
 
-            
+            //Create templates of levels.
 
             //Level 1
             string[,] templateField = {
-                { "EMP", "EMP", "EMP", "VEL", "BAS" },
-                { "EMP", "LOF", "EMP", "VEL", "EMP" },
-                { "EMP", "EMP", "EMP", "VEL", "EMP" },
-                { "EMP", "EMP", "EMP", "VEL", "EMP" },
-                { "EMP", "EMP", "EMP", "LAG", "EMP" },
+                { "EMP", "EMP", "VLR", "EMP", "BSM" },
+                { "EMP", "LBF", "VLR", "EMP", "EMP" },
+                { "EMP", "EMP", "VLR", "EMP", "EMP" },
+                { "EMP", "EMP", "LGN", "EMP", "EMP" },
                 { "EMP", "EMP", "EMP", "EMP", "EMP" },
-                { "EMP", "EMP", "EMP", "EMP", "EMP" }
+                { "EMP", "EMP", "EMP", "EMP", "EMP" },
+                { "EMP", "EMP", "EMP", "EMP", "EMP" },
             };
 
+            //Create a Field using a given template.
             NewField(templateField);
 
             Application.Run(f);
-        }
-        static public void Clicked(object sender, EventArgs e)
-        {
-            Block clickedBlock = (Block)sender;
-            Type clickedType = clickedBlock.GetType();
-
-            if (firstClicked == null)
-            {
-                if (clickedBlock.GetType().Equals(typeof(BackslashBlock)))
-                {
-                    firstClicked = clickedBlock;
-                    firstClicked.FlatAppearance.BorderColor = Color.LightSkyBlue;
-                }
-            }
-            else if (clickedType.Equals(typeof(EmptyBlock)))
-            {
-                Block secondClicked = clickedBlock;
-                Point firstLocation = firstClicked.Location;
-
-                firstClicked.Location = secondClicked.Location;
-                secondClicked.Location = firstLocation;
-
-                firstClicked.FlatAppearance.BorderColor = Color.Gray;
-                firstClicked = null;
-            }
-            else if (clickedType.Equals(typeof(VerticalLaserBlock)))
-            {
-                Block secondClicked = clickedBlock;
-                Point firstLocation = firstClicked.Location;
-
-                firstClicked.Location = secondClicked.Location;
-                secondClicked.Location = firstLocation;
-
-                
-                Block btn = new EmptyBlock();
-                btn.Location = secondClicked.Location;
-                f.Controls.Add(btn);
-                f.Controls.Remove(secondClicked);
-
-                firstClicked.FlatAppearance.BorderColor = Color.Gray;
-                firstClicked = null;
-            }
         }
         static void NewField(string[,] templateField)
         {
@@ -85,48 +45,40 @@ namespace LaserPuzzle
                 {
                     switch (templateField[i, j])
                     {
-                        //Slash
-                        case "SLA":
-                            btn = new SlashBlock();
+                        //Slash Mirror
+                        case "SLM":
+                            btn = new SlashMirrorBlock();
                             break;
-                        //Backslash
-                        case "BAS":
-                            btn = new BackslashBlock();
-                            break;
-                        //Horizontal
-                        case "HOR":
-                            btn = new HorizontalBlock();
-                            break;
-                        //Vertical
-                        case "VER":
-                            btn = new VerticalBlock();
+                        //Backslash Mirror
+                        case "BSM":
+                            btn = new BackslashMirrorBlock();
                             break;
                         //Horizontal Laser
-                        case "HOL":
+                        case "HLR":
                             btn = new HorizontalLaserBlock();
                             break;
                         //Vertical Laser
-                        case "VEL":
+                        case "VLR":
                             btn = new VerticalLaserBlock();
                             break;
                         //Laser Gun
-                        case "LAG":
+                        case "LGN":
                             btn = new LaserGunBlock();
                             break;
                         //Lightbulb On
-                        case "LON":
+                        case "LBN":
                             btn = new LightOnBlock();
                             break;
                         //Lightbulb Off
-                        case "LOF":
+                        case "LBF":
                             btn = new LightOffBlock();
                             break;
-                        //Empty
+                        //EMP := Empty
                         default:
                             btn = new EmptyBlock();
                             break;
                     }
-                    btn.Location = new System.Drawing.Point(20 + j * 56, 132 + i * 56);
+                    btn.Location = new Point(20 + j * 56, 132 + i * 56);
                     btn.Name = "btn" + i + j;
                     f.Controls.Add(btn);    //Add block to the field
                 }

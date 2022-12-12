@@ -13,8 +13,8 @@ namespace LaserPuzzle
     {
         public LaserGunBlock()
         {
-            base.BackgroundImage = global::LaserPuzzle.Properties.Resources.laser_gun;
-            base.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            base.BackgroundImage = Properties.Resources.laser_gun;
+            base.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }

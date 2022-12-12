@@ -9,21 +9,16 @@ using System.Windows.Forms;
 
 namespace LaserPuzzle
 {
-    internal class HorizontalLaserBlock : Block
+    internal class SlashMirrorBlock : Block
     {
-        public HorizontalLaserBlock()
+        public SlashMirrorBlock()
         {
-            base.BackgroundImage = Properties.Resources.horizontalal_laser;
+            base.BackgroundImage = Properties.Resources.slash;
             base.BackgroundImageLayout = ImageLayout.Stretch;
         }
         public override void Clicked(object sender, EventArgs e)
         {
-            if (SelectedMirror != null)
-            {
-                ChangeLocation();
-                ChangeLaserDirection();
-                FinishAction();
-            }
+            SelectMirror();
         }
     }
 }
