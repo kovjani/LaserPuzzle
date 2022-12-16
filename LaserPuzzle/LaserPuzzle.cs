@@ -3,12 +3,15 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Media;
+using System.Collections.Generic;
 
 namespace LaserPuzzle
 {
     internal static class LaserPuzzle
     {
         public static Field f = new Field();
+        public static Block[,] TemplateField { get; set; }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -21,66 +24,33 @@ namespace LaserPuzzle
             //Create templates of levels.
 
             //Level 1
-            string[,] templateField = {
-                { "EMP", "EMP", "VLR", "EMP", "BSM" },
-                { "EMP", "LBF", "VLR", "EMP", "EMP" },
-                { "EMP", "EMP", "VLR", "EMP", "EMP" },
-                { "EMP", "EMP", "LGN", "EMP", "EMP" },
-                { "EMP", "EMP", "EMP", "EMP", "EMP" },
-                { "EMP", "EMP", "EMP", "EMP", "EMP" },
-                { "EMP", "EMP", "EMP", "EMP", "EMP" },
+            Block.Gun = new LaserGun();
+            Block.Light = new LightOff();
+            TemplateField = new Block[,] {
+                { new Empty(), new Empty(),    new Empty(), new VerticalLaser(), new BackslashMirror() },
+                { new Empty(), Block.Light,    new Empty(), new VerticalLaser(), new Empty() },
+                { new Empty(), new Empty(),    new Empty(), new VerticalLaser(), new Empty() },
+                { new Empty(), new Empty(),    new Empty(), new VerticalLaser(), new Empty() },
+                { new Empty(), new Empty(),    new Empty(), Block.Gun,           new Empty() },
+                { new Empty(), new Empty(),    new Empty(), new Empty(),         new Empty() },
+                { new Empty(), new Empty(),    new Empty(), new Empty(),         new Empty() }
             };
 
-            //Create a Field using a given template.
-            NewField(templateField);
+            //Create the Field using TemplateField;
+            NewField();
 
             Application.Run(f);
         }
-        static void NewField(string[,] templateField)
+        static void NewField()
         {
-            Block btn;
-            for (int i = 0; i < templateField.GetLength(0); i++)
+            for (int i = 0; i < TemplateField.GetLength(0); i++)
             {
-                for (int j = 0; j < templateField.GetLength(1); j++)
+                for (int j = 0; j < TemplateField.GetLength(1); j++)
                 {
-                    switch (templateField[i, j])
-                    {
-                        //Slash Mirror
-                        case "SLM":
-                            btn = new SlashMirrorBlock();
-                            break;
-                        //Backslash Mirror
-                        case "BSM":
-                            btn = new BackslashMirrorBlock();
-                            break;
-                        //Horizontal Laser
-                        case "HLR":
-                            btn = new HorizontalLaserBlock();
-                            break;
-                        //Vertical Laser
-                        case "VLR":
-                            btn = new VerticalLaserBlock();
-                            break;
-                        //Laser Gun
-                        case "LGN":
-                            btn = new LaserGunBlock();
-                            break;
-                        //Lightbulb On
-                        case "LBN":
-                            btn = new LightOnBlock();
-                            break;
-                        //Lightbulb Off
-                        case "LBF":
-                            btn = new LightOffBlock();
-                            break;
-                        //EMP := Empty
-                        default:
-                            btn = new EmptyBlock();
-                            break;
-                    }
-                    btn.Location = new Point(20 + j * 56, 132 + i * 56);
-                    btn.Name = "btn" + i + j;
-                    f.Controls.Add(btn);    //Add block to the field
+                    TemplateField[i,j].Location = new Point(20 + j * 56, 132 + i * 56);
+
+                    //Add block to the field
+                    f.Controls.Add(TemplateField[i, j]); 
                 }
             }
         }

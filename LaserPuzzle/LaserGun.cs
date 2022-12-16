@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace LaserPuzzle
 {
-    internal class LaserGunBlock : Block
+    internal class LaserGun : Block
     {
-        public LaserGunBlock()
+        public LaserGun()
         {
             base.BackgroundImage = Properties.Resources.laser_gun;
             base.BackgroundImageLayout = ImageLayout.Stretch;

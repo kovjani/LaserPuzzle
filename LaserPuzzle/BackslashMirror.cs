@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace LaserPuzzle
 {
-    internal class SlashMirrorBlock : Block
+    internal class BackslashMirror : Block
     {
-        public SlashMirrorBlock()
+        public BackslashMirror()
         {
-            base.BackgroundImage = Properties.Resources.slash;
-            base.BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImage = Properties.Resources.backslash;
+            BackgroundImageLayout = ImageLayout.Stretch;
         }
-        public override void Clicked(object sender, EventArgs e)
+        protected override void Clicked(object sender, EventArgs e) 
         {
             SelectMirror();
         }

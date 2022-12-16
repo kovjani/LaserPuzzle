@@ -9,19 +9,16 @@ using System.Windows.Forms;
 
 namespace LaserPuzzle
 {
-    internal class VerticalLaserBlock : Block
+    internal class Empty : Block
     {
-        public VerticalLaserBlock()
-        {
-            base.BackgroundImage = global::LaserPuzzle.Properties.Resources.vertical_laser;
-            base.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+        public Empty() { 
+            base.BackColor = Color.Transparent;
         }
-        public override void Clicked(object sender, EventArgs e)
+        protected override void Clicked(object sender, EventArgs e)
         {
             if (SelectedMirror != null)
             {
                 ChangeLocation();
-                ChangeLaserDirection();
                 FinishAction();
             }
         }

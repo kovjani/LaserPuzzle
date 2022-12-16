@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>https://github.com/kovjani/LaserPuzzle/</UpdateUrl>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -75,31 +75,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HorizontalLaserBlock.cs">
+    <Compile Include="HorizontalLaser.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LaserGunBlock.cs">
+    <Compile Include="LaserGun.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LightOffBlock.cs">
+    <Compile Include="LightOff.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LightOnBlock.cs">
+    <Compile Include="LightOn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VerticalLaserBlock.cs">
+    <Compile Include="VerticalLaser.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Block.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="BackslashMirrorBlock.cs">
+    <Compile Include="BackslashMirror.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SlashMirrorBlock.cs">
+    <Compile Include="SlashMirror.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="EmptyBlock.cs">
+    <Compile Include="Empty.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Field.cs">

@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace LaserPuzzle
 {
-    internal class LightOffBlock : Block
+    internal class LightOn : Block
     {
-        public LightOffBlock()
+        public LightOn()
         {
-            base.BackgroundImage = global::LaserPuzzle.Properties.Resources.lightbulb_off;
+            base.BackgroundImage = global::LaserPuzzle.Properties.Resources.lightbulb_on;
             base.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             base.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 255, 255, 255);
             base.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 255, 255, 255);
