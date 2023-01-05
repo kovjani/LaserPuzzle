@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="LaserPuzzle.exe" version="1.0.0.4" publicKeyToken="0b8d36bfab21bff5" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="LaserPuzzle" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="LaserPuzzle.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserPuzzle.exe" size="28632">
+      <assemblyIdentity name="LaserPuzzle" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MOPvIUwPoBNgTwgYI8HFcI5K8VMKbkDic27BaFl94X4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="LaserPuzzle.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\backslash.png" size="956">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>evCbFkoQkU2K133xX5YctlBXjrk6wI0bpIzI4b/DJQA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\laser_gun.png" size="731">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FwclJqOsvZjCzw0L8+CoRm7vD2sdS3QjWjcWD9Yopa8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\lightbulb_off.png" size="1160">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lTG9hW+i+W4JXAzUMt2CIIFT79ktzZdTu/O7zZJofgo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\lightbulb_on.png" size="1269">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>eotFgkbFtyfwmJBpUHqBmFsEk1VcPhRUM5ehq3T+mEA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\slash.png" size="925">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GZw1dT0LCnmmZhZzqqwJv8MIcip4iu6iimKomvUvYeA=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-861P4GR\Jani" issuerKeyHash="9a0e3950e08d391108e8ea90a4a8d1929f6c0e2f" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/Ok3nPI5r9GhiHHDOagnDFzlJzdi2CEzD7ibeq5tk/g=</DigestValue></Reference></SignedInfo><SignatureValue>RIhBmk/C+Jq3c+tIalozoU8zn/KDf47PDIuvmMHRrEyoNEhn7RoLnp3bq4ZdXsfau4xFEaPZqUQpSF07gEKAilQnLQOueu8Oz1yWEaqsF4mkiyJgrSqIjpHZqmhPtxSDjUzzU9e8QaAavFgCE2Bi1JBhsZRGoOsgFz4sRCjX0VI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3EaGjE2wIYVIpMMTQFpBDR7rBzAnD8pQ9RsIYI0oVko9j9jL6q075HQpzNRJ3x2IVCQXsq40e5Ba469n+t0ly36v9EJWGTkSe4pV3xAeSkpSp95gfr5N7PSasiHDoA3A4ftECCeDH5Nu9ONBktZVlUF/3ofsTkSTp0I/GdM4gPU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f8936dae7a9bb80f3321d8623727e55c0c27a839c37188a1d1af39f29c37e9fc" Description="" Url=""><as:assemblyIdentity name="LaserPuzzle.exe" version="1.0.0.4" publicKeyToken="0b8d36bfab21bff5" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-861P4GR\Jani</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>EQ1WHe7MjJDJAhwmZijd6QSIkIT8JgazH4dY4n9J428=</DigestValue></Reference></SignedInfo><SignatureValue>TkIFmaAkHBY3G/N0OOBKfRc7nqOR162+mWYpNjGv4454JSclj5nDKvH4OKSLZWtI37X58mwuTeORgm9lxmoOiy70PYjN6Tj7XA0Jx7Z7B17Mxz+zEG/nzfbWOnIqtiELa1Oj+4KDeFiYJ2cQFumfU/0KQiQ77bGVYLahU9yVp+o=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3EaGjE2wIYVIpMMTQFpBDR7rBzAnD8pQ9RsIYI0oVko9j9jL6q075HQpzNRJ3x2IVCQXsq40e5Ba469n+t0ly36v9EJWGTkSe4pV3xAeSkpSp95gfr5N7PSasiHDoA3A4ftECCeDH5Nu9ONBktZVlUF/3ofsTkSTp0I/GdM4gPU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQFhhPuU9AR7VB8j4GnsIy+DANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtADgANgAxAFAANABHAFIAXABKAGEAbgBpMB4XDTIyMTIwMzIwMzQyNFoXDTIzMTIwNDAyMzQyNFowMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQA4ADYAMQBQADQARwBSAFwASgBhAG4AaTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3EaGjE2wIYVIpMMTQFpBDR7rBzAnD8pQ9RsIYI0oVko9j9jL6q075HQpzNRJ3x2IVCQXsq40e5Ba469n+t0ly36v9EJWGTkSe4pV3xAeSkpSp95gfr5N7PSasiHDoA3A4ftECCeDH5Nu9ONBktZVlUF/3ofsTkSTp0I/GdM4gPUCAwEAATANBgkqhkiG9w0BAQsFAAOBgQAIyjFoGKGEUD0NRtjNKwvv7B+gEsvdFUht3OazXvRDcUENEJLP2oL50WIDeQL22PjQv3rmzTWuSHlaMG9IEFGzB+YyBqUDoq1CVulDL+HyQA/0QvPXgKyIYlqkcr9lzuFOSG37s6bFu3hFF/Pwnb3YqLU6EnzOzBrfcvqwuww/Tw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

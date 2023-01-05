@@ -13,10 +13,10 @@ namespace LaserPuzzle
     {
         public LightOn()
         {
-            base.BackgroundImage = global::LaserPuzzle.Properties.Resources.lightbulb_on;
-            base.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            base.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 255, 255, 255);
-            base.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 255, 255, 255);
+            base.BackgroundImage = Properties.Resources.lightbulb_on;
+            base.BackgroundImageLayout = ImageLayout.Stretch;
+            base.FlatAppearance.MouseDownBackColor = Color.FromArgb(25, 255, 255, 255);
+            base.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 255, 255, 255);
             base.BackColor = Color.FromArgb(25, 255, 255, 255);
         }
     }

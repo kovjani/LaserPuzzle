@@ -14,6 +14,8 @@ namespace LaserPuzzle
         protected static Block SelectedMirror { get; set; }
         public static LaserGun Gun { get; set; }
         public static Block Light { get; set; }
+        protected enum LaserType { Horizontal, Vertical };
+        protected enum LaserDirection { Up, Down, Right, Left };
         public Block()
         {
             Cursor = Cursors.Hand;
@@ -77,6 +79,72 @@ namespace LaserPuzzle
             LaserPuzzle.TemplateField[thisIndex['i'], thisIndex['j']] = SelectedMirror;
         }
 
+        protected void RemoveLasers()
+        {
+            int length0 = LaserPuzzle.TemplateField.GetLength(0);
+            int length1 = LaserPuzzle.TemplateField.GetLength(1);
+
+            for (int i = 0; i < length0; i++)
+            {
+                for (int j = 0; j < length1; j++)
+                {
+                    Block block = LaserPuzzle.TemplateField[i, j];
+                    if (block.GetType().Equals(typeof(HorizontalLaser)) || block.GetType().Equals(typeof(VerticalLaser)))
+                    {
+                        Block empty = new Empty();
+
+                        empty.Location = block.Location;
+
+                        LaserPuzzle.f.Controls.Remove(block);
+                        LaserPuzzle.f.Controls.Add(empty);
+
+                        LaserPuzzle.TemplateField[i, j] = empty;
+                    }
+                }
+            }
+        }
+
+        protected void ChangeLaserDirection()
+        {
+            Dictionary<char, int> gunIndex = IndexOf2dArray(Gun, LaserPuzzle.TemplateField);
+
+            int length0 = LaserPuzzle.TemplateField.GetLength(0); //width
+            int length1 = LaserPuzzle.TemplateField.GetLength(1); //height
+            int i = gunIndex['i'];
+            int j = gunIndex['j'];
+
+            //Remove all laser from the field and then put some new appropriately.
+            RemoveLasers();
+
+            //This gun shoots up
+            LaserType laserType = LaserType.Vertical;
+            LaserDirection laserDirection = LaserDirection.Up;
+            
+            while (true)
+            {
+                if (laserDirection == LaserDirection.Up)
+                {
+                    if (--i < 0) break;
+                }
+                else if (laserDirection == LaserDirection.Down)
+                {
+                    if (++i >= length0) break;
+                }
+                else if (laserDirection == LaserDirection.Left)
+                {
+                    if (--j < 0) break;
+                }
+                else //Right
+                {
+                    if (++j >= length1) break;
+                }
+
+                //The NextBlockAction() method does some changes depends on the type of the next Block.
+                if (LaserPuzzle.TemplateField[i, j].NextBlockAction(ref laserType, ref laserDirection, ref i, ref j, length0, length1))
+                    return;
+            }
+        }
+
         protected void FinishAction()
         {
             SelectedMirror.FlatAppearance.BorderColor = Color.Gray;
@@ -89,13 +157,12 @@ namespace LaserPuzzle
 
         protected Dictionary<char, int> IndexOf2dArray<T>(T element, T[,] array)
         {
+            int length0 = LaserPuzzle.TemplateField.GetLength(0); //width
+            int length1 = LaserPuzzle.TemplateField.GetLength(1); //height
 
-            int w = LaserPuzzle.TemplateField.GetLength(0); //width
-            int h = LaserPuzzle.TemplateField.GetLength(1); //height
-
-            for (int i = 0; i < w; i++)
+            for (int i = 0; i < length0; i++)
             {
-                for (int j = 0; j < h; j++)
+                for (int j = 0; j < length1; j++)
                 {
                     //The == operator is undefined for generic.
                     if (array[i, j].Equals(element))
@@ -118,8 +185,7 @@ namespace LaserPuzzle
         //and it calls another methods depends on the type of the clicked object.
         protected virtual void Clicked(object sender, EventArgs e) { }
 
-        //The ChangeLaserDirection method is overrided in mirror classes,
-        //and the appropriate one will be called from a laser class.
-        protected virtual void ChangeLaserDirection() { }
+        protected virtual bool NextBlockAction(ref LaserType laserType, ref LaserDirection laserDirection, ref int i, ref int j, int length0, int length1)
+        { return false; }
     }
 }
